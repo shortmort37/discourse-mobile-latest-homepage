@@ -6,6 +6,7 @@ export default apiInitializer("1.0", (api) => {
       return;
     }
     if (url === "/" || url === "/categories") {
+      document.documentElement.style.visibility = "hidden";
       window.location.replace("/latest");
     }
   });
