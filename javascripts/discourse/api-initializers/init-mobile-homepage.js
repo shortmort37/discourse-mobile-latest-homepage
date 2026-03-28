@@ -7,6 +7,8 @@ export default apiInitializer("1.0", (api) => {
 
   const siteSettings = api.container.lookup("service:site-settings");
   const topMenu = siteSettings.top_menu || "";
+  console.log("Mobile Latest Homepage - top_menu before:", topMenu);
+  
   const items = topMenu.split("|").map(i => i.trim());
   const latestIndex = items.indexOf("latest");
 
@@ -14,5 +16,6 @@ export default apiInitializer("1.0", (api) => {
     items.splice(latestIndex, 1);
     items.unshift("latest");
     siteSettings.top_menu = items.join("|");
+    console.log("Mobile Latest Homepage - top_menu after:", siteSettings.top_menu);
   }
 });
