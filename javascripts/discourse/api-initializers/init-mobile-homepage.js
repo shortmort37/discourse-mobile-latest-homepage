@@ -7,8 +7,8 @@ export default apiInitializer("1.0", (api) => {
 
   api.modifyClass("route:discovery.categories", {
     pluginId: "mobile-latest-homepage",
-    redirect() {
-      this.replaceWith("discovery.latest-topics");
+    beforeModel() {
+      this.replaceWith("discovery.latest");
     }
   });
 });
