@@ -1,10 +1,6 @@
 import { apiInitializer } from "discourse/lib/api";
 
 export default apiInitializer("1.0", (api) => {
-  if (!window.matchMedia("(max-width: 768px)").matches) {
-    return;
-  }
-
   const siteSettings = api.container.lookup("service:site-settings");
   const topMenu = siteSettings.top_menu || "";
   console.log("Mobile Latest Homepage - top_menu before:", topMenu);
