@@ -9,9 +9,21 @@ export default apiInitializer("1.0", (api) => {
   setDefaultHomepage("latest");
 
   api.onPageChange((url) => {
+    if (url === "/categories") {
+      sessionStorage.setItem("mobile_homepage", "categories");
+    } else if (url === "/latest") {
+      sessionStorage.setItem("mobile_homepage", "latest");
+    }
+
     if (url === "/") {
-      const router = api.container.lookup("service:router");
-      router.replaceWith("discovery.latest");
+      const choice = sessionStorage.getItem("mobile_homepage");
+      if (choice === "categories") {
+        const router = api.container.lookup("service:router");
+        router.replaceWith("discovery.categories");
+      } else {
+        const router = api.container.lookup("service:router");
+        router.replaceWith("discovery.latest");
+      }
     }
   });
 });
