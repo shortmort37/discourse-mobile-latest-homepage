@@ -6,9 +6,10 @@ export default apiInitializer("1.0", (api) => {
     return;
   }
 
+  setDefaultHomepage("latest");
+
   api.onPageChange((url) => {
-    setDefaultHomepage("latest");
-    if (url === "/" || url === "/categories") {
+    if (url === "/") {
       const router = api.container.lookup("service:router");
       router.replaceWith("discovery.latest");
     }
