@@ -4,7 +4,7 @@ A Discourse theme component that sets the default homepage to **Latest** on narr
 
 This is a replacement for the [Force Mobile Homepage](https://meta.discourse.org/t/force-mobile-homepage/95705) component, which was marked broken in Discourse 3.5 due to the deprecation of `site.mobileView`.
 
-Discussion thread on Discourse Meta: *(add URL once posted)*
+Discussion thread on Discourse Meta: https://meta.discourse.org/t/mobile-latest-homepage-theme-component/400836
 
 ---
 
